@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ToolCard } from "@/components/ToolCard";
 import { tools } from "@/lib/tools";
 import { Sparkles, Shield, Zap, Globe } from "lucide-react";
@@ -39,7 +40,7 @@ export default function HomePage() {
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           {tools.map((tool) => (
-            <a
+            <Link
               key={tool.slug}
               href={tool.href}
               className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium
@@ -47,7 +48,7 @@ export default function HomePage() {
             >
               <tool.icon className="w-4 h-4" />
               {tool.title}
-            </a>
+            </Link>
           ))}
         </div>
       </section>
@@ -100,10 +101,10 @@ export default function HomePage() {
         </p>
         <div className="flex flex-wrap justify-center gap-3">
           {tools.slice(0, 3).map((tool) => (
-            <a key={tool.slug} href={tool.href} className="tool-btn-primary">
+            <Link key={tool.slug} href={tool.href} className="tool-btn-primary">
               <tool.icon className="w-4 h-4" />
               {tool.title}
-            </a>
+            </Link>
           ))}
         </div>
       </section>
